@@ -1,24 +1,20 @@
-import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Raj Mayank Blog</title>
         <meta name="description" content="This is a blog." />
+        <title>Raj Mayank Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
         <Navbar />
+        <Footer />
       </main>
-
-      <footer className={styles.footer}>
-        <p>&lt;/&gt; by Hritick</p>
-      </footer>
     </div>
   );
 }
