@@ -7,14 +7,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2em;
-    background: #0f0c29;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    /* Chrome 10-25, Safari 5.1-6 */
+    gap: 0.5em;
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
     padding: 5em;
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .ul {
@@ -24,15 +19,16 @@
     justify-content: center;
     position: relative;
     gap: 5em;
+    padding-left: 0;
+    padding-top: 1em;
 }
 
 .brandName {
     flex-basis: 100%;
-    border-right: 2px solid rgb(21, 121, 139);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    padding: 2em;
 }
 
 .listItem {
@@ -48,11 +44,29 @@
     width: 10em;
     height: 10em;
     border-radius: 50%;
-    border: 2px solid rgb(21, 121, 139);
+    border: 2px solid rgb(135, 115, 187);
     background-image: url(../public/profilePic.png);
     background-size: contain;
     display: block;
+    position: relative;
 }
+
+.profilePic::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.profilePic:hover::after {
+    opacity: 1;
+    background: url("../public/content.png");
+    background-size: contain;
+    cursor: pointer;
+}
+
 
 .description {
     color: rgba(255, 255, 255, 0.7);
@@ -75,9 +89,13 @@
 
 .intro h1 {
     font-size: 2.5rem;
-    color: rgb(21, 121, 139);
-    font-family: "Montserrat";
+    color: rgb(135, 115, 187);
+    font-family: "Jura";
+    font-weight: 700;
+    position: relative;
+    opacity: 1;
 }
+
 
 .intro p {
     color: rgba(255, 255, 255, 0.7);
@@ -107,17 +125,17 @@
     font-family: "Raleway";
     letter-spacing: 0.05em;
     font-weight: 700;
-    color: rgb(21, 121, 139);
+    color: rgb(135, 115, 187);
     background-color: rgba(255, 255, 255, 0.7);
 }
 
 .linkContainer button:hover {
     cursor: pointer;
-    background-color: rgb(21, 121, 139);
+    background-color: rgb(135, 115, 187);
 }
 
 .linkContainer button:hover a {
-    background-color: rgb(21, 121, 139);
+    background-color: rgb(135, 115, 187);
     color: rgba(255, 255, 255, 0.7);
 }
 
