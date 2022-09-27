@@ -19,7 +19,7 @@ function Navbar() {
           <div className={styles.profilePic}></div>
         </li>
         <li className={styles.listItem}>
-          <p className={styles.intro}>
+          <div className={styles.intro}>
             <header>
               <h1>
                 <Typewriter
@@ -36,7 +36,7 @@ function Navbar() {
               world-economics, macroeconomics and microeconomics. I have great
               expertise in Business economics.
             </p>
-          </p>
+          </div>
           <p className={styles.description}>
             Writer&nbsp;<span>|</span>&nbsp;Social-media influencer&nbsp;
             <span>|</span>
@@ -46,7 +46,7 @@ function Navbar() {
       </ul>
       <div className={styles.linkContainer}>
         <button>
-          <a href="blogs">Check out my blogs&nbsp;&rarr;</a>
+          <a>Check out my blogs&nbsp;&rarr;</a>
         </button>
       </div>
     </nav>

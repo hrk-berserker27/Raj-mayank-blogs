@@ -70,7 +70,8 @@
 
 .description {
     color: rgba(255, 255, 255, 0.7);
-    font-family: "Epilogue";
+    font-family: "Jura";
+    font-weight: 700;
 }
 
 .description span {
