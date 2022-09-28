@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Blog from "../components/Blog";
 import Head from "next/head";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <Navbar />
         <Footer />
+        <Blog />
       </main>
     </div>
   );
