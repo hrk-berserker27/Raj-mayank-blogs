@@ -7,3 +7,17 @@
   flex-direction: column;
   scroll-snap-type: y mandatory;
 }
+
+.main::-webkit-scrollbar {
+  background-color: #0f0c29;
+  width: 6px;
+}
+
+.main::-webkit-scrollbar-track {
+  background-color: #302b63;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background-color: rgb(135, 115, 187);
+  border-radius: 5px;
+}

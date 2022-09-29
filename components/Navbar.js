@@ -5,6 +5,13 @@ import Image from "next/image";
 import Typewriter from "typewriter-effect";
 
 function Navbar() {
+  let handleClick;
+  if (typeof window !== "undefined") {
+    handleClick = () => {
+      const list = document.getElementById("navLinks");
+      list.style.clipPath = "circle(50% at -50% 50%)";
+    };
+  }
   return (
     <nav className={styles.navbar}>
       <ul className={styles.ul}>
@@ -34,11 +41,11 @@ function Navbar() {
             <p>
               I am an aspiring economist with interest in various fields such as
               world-economics, macroeconomics and microeconomics. I have great
-              expertise in Business economics.
+              expertise in International economics.
             </p>
           </div>
           <p className={styles.description}>
-            Writer&nbsp;<span>|</span>&nbsp;Social-media influencer&nbsp;
+            Blogger&nbsp;<span>|</span>
             <span>|</span>
             &nbsp;Aspiring Economist
           </p>
@@ -46,8 +53,20 @@ function Navbar() {
       </ul>
       <div className={styles.linkContainer}>
         <button>
-          <a>Check out my blogs&nbsp;&rarr;</a>
+          <a href="blog">Check out my blogs&nbsp;&rarr;</a>
         </button>
+      </div>
+      <div className={styles.navigationLinks}>
+        <div className={styles.burger} onClick={handleClick}>
+          <div className={styles.burgerLayer}></div>
+          <div className={styles.burgerLayer}></div>
+          <div className={styles.burgerLayer}></div>
+        </div>
+        <ul className={styles.containerList}>
+          <li>Home</li>
+          <li>Blogs</li>
+          <li>Contact Me</li>
+        </ul>
       </div>
     </nav>
   );
