@@ -22,6 +22,7 @@ function Navbar() {
     array[2].style.transform = `rotate(${thirdChildRotation}) translate(${thirdChildTranslation})`;
     element.style.transform = `rotate(${parentRotation})`;
   };
+  //function for creating cross icon
   const closeButtonActive = (id, position, top, left, zIndex) => {
     const burger = document.getElementById(id);
     burger.style.position = position;
@@ -30,11 +31,13 @@ function Navbar() {
     burger.style.zIndex = zIndex;
     createArrowAndRevert(burger, "0.3em", "none", "90deg", "-0.3em", "45deg");
   };
+  //function for reverting back to burger icon
   const revert = (id, position) => {
     const burger = document.getElementById(id);
     burger.style.position = position;
     createArrowAndRevert(burger, "0em", "block", "0deg", "0em", "0deg");
   };
+  //adding the function for click event
   const handleClick = () => {
     if (typeof window !== "undefined") {
       const list = document.getElementById("navLinks");
