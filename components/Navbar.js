@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import styles from "../styles/Navbar.module.css";
 import img from "../public/logo.png";
 import Image from "next/image";

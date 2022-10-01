@@ -1,5 +1,6 @@
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
+import BlogTable from "../components/BlogTable";
 import Head from "next/head";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Navbar />
+        <BlogTable />
       </main>
     </div>
   );
