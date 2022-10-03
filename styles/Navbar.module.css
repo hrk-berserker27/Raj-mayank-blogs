@@ -7,7 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5em;
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
     padding: 5em;
 }
@@ -173,7 +172,9 @@
     padding-left: 1em;
     justify-content: center;
     clip-path: circle(50% at -50% 50%);
-    background-color: rgb(135, 115, 187);
+    background-color: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(150px);
+    z-index: 99;
 }
 
 .navigationLinks ul {
@@ -186,7 +187,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.5em;
-    background-color: rgb(21, 121, 139);
+    background-color: rgb(135, 115, 187);
     clip-path: circle(0.0% at 0 50%);
     transition: all 1s ease-in;
 }
@@ -197,12 +198,17 @@
     border-radius: 50%;
     padding: 1em;
     background: linear-gradient(to right, #24243e, #0f0c29);
+    border: 2px solid rgb(135, 115, 187);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.5em;
     transition: all 0.5s ease-in-out;
+}
+
+.burger:hover {
+    cursor: pointer;
 }
 
 /* .containerExpansion {

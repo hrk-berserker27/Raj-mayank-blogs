@@ -1,10 +1,57 @@
 .container {
-    display: grid;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    color: #fff;
+    padding-top: 3em;
 }
 
 /* slider,slides,blogList,card*/
 .slider {
     width: 100%;
-    height: 35%;
-    border: 2px solid;
+    height: 75%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sliderContainer {
+    height: 90%;
+    width: 400%;
+    position: relative;
+    display: flex;
+}
+
+.slides {
+    height: 100%;
+    width: 25%;
+    display: grid;
+    place-items: center;
+    font-size: 4rem;
+}
+
+.slidesCounter {
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.dash {
+    height: 0.3em;
+    width: 2.5em;
+    background-color: rgba(255, 255, 255, 0.09);
+    border-radius: 0.1em;
+}
+
+.active {
+    background-color: grey;
+}
+
+.activeSlide {
+    transform: translateX(-100%);
 }

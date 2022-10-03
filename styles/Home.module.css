@@ -5,7 +5,6 @@
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  scroll-snap-type: y mandatory;
 }
 
 .main::-webkit-scrollbar {
