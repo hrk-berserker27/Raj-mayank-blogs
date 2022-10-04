@@ -1,11 +1,16 @@
 import React from "react";
 import styles from "../styles/BlogTable.module.css";
+import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 function BlogTable() {
   const [counter, setCounter] = useState(0);
+  const [ref, inview, entry] = useInView({
+    threshold: 0,
+  });
   return (
     <div className={styles.container}>
-      <section className={styles.slider}>
+      <section className={styles.slider} ref={ref}>
+        <div>{`Header inside viewport ${inview}.`}</div>
         <div className={styles.sliderContainer}>
           <div className={styles.slides}>1</div>
           <div className={styles.slides}>2</div>
