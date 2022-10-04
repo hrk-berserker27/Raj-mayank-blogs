@@ -1,9 +1,13 @@
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import BlogTable from "../components/BlogTable";
+import { useInView } from "react-intersection-observer";
 import Head from "next/head";
 
 export default function Home() {
+  const [ref, inview, entry] = useInView({
+    threshold: 0,
+  });
   return (
     <div>
       <Head>
