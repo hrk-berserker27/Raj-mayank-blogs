@@ -2,19 +2,37 @@ import React, { useEffect } from "react";
 import styles from "../styles/BlogTable.module.css";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import { prepareServerlessUrl } from "next/dist/server/base-server";
 function BlogTable() {
   const [counter, setCounter] = useState(0);
-  const [ref, inview, entry] = useInView({
+  const [ref, inview] = useInView({
     threshold: 0,
   });
-  function increment() {
-    setCounter((prevState) => prevState + 1);
-  }
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      let interval;
+      const slider = document.getElementById("slider");
+      const childNumber = slider.childElementCount;
+      if (inview && counter < childNumber) {
+        interval = setTimeout(() => {
+          slider.setAttribute("style", `margin-left: calc(${-counter}*100%)`);
+          setCounter((prevState) => prevState + 1);
+        }, 5000);
+      } else {
+        if (counter === childNumber) {
+          setCounter((prevState) => prevState - prevState);
+        }
+      }
+      return () => {
+        clearTimeout(interval);
+      };
+    }
+  }, [counter, inview]);
 
   return (
     <div className={styles.container}>
       <section className={styles.slider} ref={ref}>
-        <div className={styles.sliderContainer}>
+        <div className={styles.sliderContainer} id="slider">
           <div className={styles.slides}>1</div>
           <div className={styles.slides}>2</div>
           <div className={styles.slides}>3</div>
