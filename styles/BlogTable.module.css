@@ -6,6 +6,7 @@
     padding-top: 3em;
 }
 
+
 /* slider,slides,blogList,card*/
 .slider {
     width: 100%;
@@ -49,9 +50,6 @@
     border-radius: 0.1em;
 }
 
-.active {
-    background-color: grey;
-}
 
 .activeSlide {
     transform: translateX(-100%);
