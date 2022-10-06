@@ -13,26 +13,30 @@ function BlogTable() {
       let interval;
       const slider = document.getElementById("slider");
       const labelList = document.getElementById("list");
-      const array = labelList.children;
+      const array = Array.from(labelList.children);
       const childNumber = slider.childElementCount;
+
       if (inview && counter < childNumber) {
+        slider.setAttribute("style", `margin-left: calc(${-counter}*100%)`);
+        array[counter].setAttribute(
+          "style",
+          "background-color: rgb(217, 214, 214)"
+        );
         interval = setTimeout(() => {
-          slider.setAttribute("style", `margin-left: calc(${-counter}*100%)`);
-          array[counter].setAttribute(
-            "style",
-            `background-color: rgb(217, 214, 214)`
-          );
-          if (counter > 0) {
-            array[counter - 1].removeAttribute("style");
-          }
           setCounter((prevState) => prevState + 1);
         }, 5000);
+        if (counter > 0) {
+          array[counter - 1].removeAttribute("style");
+        }
+        if (counter === 0 && array[childNumber - 1].hasAttribute("style")) {
+          array[childNumber - 1].removeAttribute("style");
+        }
       } else {
         if (counter === childNumber) {
           setCounter((prevState) => prevState - prevState);
-          array[counter - 1].removeAttribute("style");
         }
       }
+
       return () => {
         clearTimeout(interval);
       };
