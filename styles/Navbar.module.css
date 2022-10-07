@@ -141,7 +141,7 @@
     padding: 1em;
     border: none;
     outline: none;
-    box-shadow: 0px 0px 5px 3px #434343;
+    box-shadow: 0px 0px 15px 3px var(--color-1);
     border-radius: 25px;
     background-color: #CDC392;
     animation: jump 2s linear infinite;
@@ -158,6 +158,7 @@
 .linkContainer button:hover {
     cursor: pointer;
     background-color: #434343;
+    box-shadow: 0px 0px 15px 5px var(--color-2);
 }
 
 .linkContainer button:hover a {
