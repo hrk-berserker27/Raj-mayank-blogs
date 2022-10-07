@@ -82,9 +82,10 @@ function Navbar() {
               </h1>
             </header>
             <p>
-              I am an aspiring economist with interest in various fields such as
-              world-economics, macroeconomics and microeconomics. I have great
-              expertise in International economics.
+              I am an aspiring economist with interest in various fields such as{" "}
+              <span>world-economics</span>, <span>macroeconomics</span> and{" "}
+              <span>microeconomics</span>. I have great expertise in{" "}
+              <span>International economics</span>.
             </p>
           </div>
           <p className={styles.description}>
