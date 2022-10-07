@@ -1,100 +1,125 @@
 .navbar {
-    scroll-snap-align: start;
     min-height: 100vh;
     max-width: 1440px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    align-items: flex-start;
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 5em;
+    padding-top: 0em;
+    padding-left: 10em;
+    --color-1: #434343;
+    --color-2: #cdc392;
+    --color-3: rgba(255, 255, 255, 0.7);
+    --color-4: #343434;
+    --color-5: #000000;
 }
 
 .ul {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     position: relative;
-    gap: 5em;
     padding-left: 0;
-    padding-top: 1em;
+}
+
+.img {
+    zoom: 35%;
 }
 
 .brandName {
-    flex-basis: 100%;
+    width: 100%;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3em;
     padding: 2em;
+    isolation: isolate;
 }
 
 .listItem {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     flex-basis: 100%;
     gap: 1em;
+    padding-top: 2em;
 }
 
 .profilePic {
     width: 10em;
     height: 10em;
     border-radius: 50%;
-    border: 2px solid rgb(135, 115, 187);
+    border: 2px solid #CDC392;
     background-image: url(../public/profilePic.png);
     background-size: contain;
     display: block;
     position: relative;
+    zoom: 50%;
 }
 
 .profilePic::after {
     position: absolute;
     content: "";
-    inset: 0;
-    opacity: 0;
+    inset: -10%;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(to right, #343434, #434343);
+    z-index: -1;
 }
 
 .profilePic:hover::after {
     opacity: 1;
-    background: url("../public/content.png");
-    background-size: contain;
     cursor: pointer;
 }
 
 
 .description {
-    color: rgba(255, 255, 255, 0.7);
+    color: #CDC392;
     font-family: "Jura";
     font-weight: 700;
+    width: 75ch;
+    padding-left: 3em;
 }
 
 .description span {
-    color: rgb(21, 121, 139);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.secondList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    padding-left: 3em;
 }
 
 .intro {
     padding: 3em;
     padding-top: 2em;
-    padding-bottom: 2em;
-    border: 2px solid rgba(255, 255, 255, 0.09);
+    padding-bottom: 0em;
     border-radius: 1.5em;
-    background-color: rgba(255, 255, 255, 0.09);
-    backdrop-filter: blur(150px);
+    border-top-left-radius: 0em;
+    max-width: 75ch;
 }
 
 .intro h1 {
     font-size: 2.5rem;
-    color: rgb(135, 115, 187);
+    color: #CDC392;
     font-family: "Jura";
     font-weight: 700;
     position: relative;
     opacity: 1;
 }
+
 
 
 .intro p {
@@ -107,8 +132,8 @@
 .linkContainer {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5em;
 }
 
 .linkContainer button {
@@ -116,8 +141,9 @@
     padding: 1em;
     border: none;
     outline: none;
-    box-shadow: 0px 0px 5px 3px #302b63;
+    box-shadow: 0px 0px 5px 3px #434343;
     border-radius: 25px;
+    background-color: #CDC392;
     animation: jump 2s linear infinite;
 }
 
@@ -125,18 +151,18 @@
     font-family: "Raleway";
     letter-spacing: 0.05em;
     font-weight: 700;
-    color: rgb(135, 115, 187);
-    background-color: rgba(255, 255, 255, 0.7);
+    color: #434343;
+    background-color: #CDC392;
 }
 
 .linkContainer button:hover {
     cursor: pointer;
-    background-color: rgb(135, 115, 187);
+    background-color: #434343;
 }
 
 .linkContainer button:hover a {
-    background-color: rgb(135, 115, 187);
-    color: rgba(255, 255, 255, 0.7);
+    background-color: #434343;
+    color: #CDC392;
 }
 
 @keyframes jump {
@@ -163,32 +189,34 @@
 
 .navigationLinks {
     position: fixed;
+    top: 0;
     left: 0;
-    width: 15%;
+    width: 15em;
     min-height: 100vh;
     list-style: none;
     display: flex;
     flex-direction: column;
-    padding-left: 1em;
     justify-content: center;
-    clip-path: circle(50% at -50% 50%);
-    background-color: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(150px);
+    clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%, 0% 100%);
+    background: #434343;
     z-index: 99;
+    padding-left: 3em;
 }
 
 .navigationLinks ul {
-    color: rgba(255, 255, 255, 0.7);
     position: absolute;
-    width: 150%;
-    height: 150%;
-    left: -1em;
+    left: 0;
+    top: -1em;
+    height: 100%;
+    width: 100%;
+    color: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5em;
-    background-color: rgb(135, 115, 187);
-    clip-path: circle(0.0% at 0 50%);
+    transform: translateX(-100%);
+    clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%, 0% 100%);
+    background-color: #CDC392;
     transition: all 1s ease-in;
 }
 
@@ -197,8 +225,8 @@
     height: 4em;
     border-radius: 50%;
     padding: 1em;
-    background: linear-gradient(to right, #24243e, #0f0c29);
-    border: 2px solid rgb(135, 115, 187);
+    background: linear-gradient(to right, #434343, #000);
+    border: 3px solid #CDC392;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,14 +239,11 @@
     cursor: pointer;
 }
 
-/* .containerExpansion {
-    clip-path: circle(50% at -50% 50%);
-} */
 
 .burger .burgerLayer {
     height: 0.2em;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: #CDC392;
     border-radius: 3px;
     transition: all 1s ease-in-out;
 }
@@ -226,4 +251,16 @@
 
 .containerList li {
     font-family: "Jura";
+}
+
+.landingImage {
+    position: absolute;
+    top: -20%;
+    right: 0;
+    height: 140%;
+    width: 100%;
+    background-image: url(../public/landingPageImage.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
 }

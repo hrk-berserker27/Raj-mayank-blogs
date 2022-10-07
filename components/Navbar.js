@@ -41,12 +41,12 @@ function Navbar() {
     if (typeof window !== "undefined") {
       const list = document.getElementById("navLinks");
       if (active) {
-        list.style.clipPath = "circle(0.0% at 0 50%)";
         revert("burger", "static");
+        list.style.transform = "translateX(-100%)";
         active = false;
         return;
       } else {
-        list.style.clipPath = "circle(50% at -50% 50%)";
+        list.style.transform = "translateX(0%)";
       }
       active = true;
       if (active) {
@@ -58,16 +58,17 @@ function Navbar() {
     <nav className={styles.navbar}>
       <ul className={styles.ul}>
         <li className={styles.brandName}>
-          <Image
-            src={img}
-            className={styles.img}
-            layout="intrinsic"
-            alt="brandName"
-            priority="true"
-          />
+          <div className={styles.img}>
+            <Image
+              src={img}
+              layout="intrinsic"
+              alt="brandName"
+              priority="true"
+            />
+          </div>
           <div className={styles.profilePic}></div>
         </li>
-        <li className={styles.listItem}>
+        <li className={styles.secondList}>
           <div className={styles.intro}>
             <header>
               <h1>
@@ -91,6 +92,7 @@ function Navbar() {
             <span>|</span>
             &nbsp;Aspiring Economist
           </p>
+          <div className={styles.landingImage}></div>
         </li>
       </ul>
       <div className={styles.linkContainer}>

@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/BlogTable.module.css";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
-import { prepareServerlessUrl } from "next/dist/server/base-server";
+
 function BlogTable() {
   const [counter, setCounter] = useState(0);
   const [ref, inview] = useInView({
