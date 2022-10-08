@@ -59,14 +59,17 @@ function Navbar() {
     <nav className={styles.navbar}>
       <ul className={styles.ul}>
         <li className={styles.brandName}>
-          <div className={styles.img}>
-            <Image
-              src={img}
-              layout="intrinsic"
-              alt="brandName"
-              priority="true"
-            />
-          </div>
+          <Tilt>
+            <div className={styles.img}>
+              <Image
+                src={img}
+                layout="intrinsic"
+                alt="brandName"
+                priority="true"
+              />
+            </div>
+          </Tilt>
+
           <Tilt tiltMaxAngleX={30}>
             <div className={styles.profilePic}></div>
           </Tilt>

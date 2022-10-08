@@ -61,6 +61,7 @@
     border-radius: 50%;
     background: linear-gradient(to right, var(--color-4), var(--color-1));
     z-index: -1;
+    filter: drop-shadow(5px 5px 25px var(--color-2));
 }
 
 .profilePic:hover::after {
@@ -262,4 +263,142 @@
     background-size: contain;
     background-position: right;
     filter: grayscale(50%);
+}
+
+@media screen and (max-width: 1072px) {
+
+    .intro {
+        text-align: center;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .brandName {
+        padding-top: 5em;
+    }
+
+    .secondList {
+        padding-left: 0em;
+        width: 100vw;
+        align-items: center;
+    }
+
+    .intro h1 {
+        font-size: 4rem;
+    }
+
+    .intro p {
+        max-width: 50ch;
+    }
+
+    .navigationLinks {
+        width: 15%;
+    }
+
+    .landingImage {
+        background: none;
+    }
+
+    .description {
+        display: flex;
+        justify-content: center;
+    }
+
+    .linkContainer {
+        justify-content: center;
+        margin-top: 2em;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+
+    .intro h1 {
+        font-size: 2.5rem;
+        padding-right: 20%;
+    }
+
+    .intro h1,
+    .intro p {
+        padding: 1em;
+        padding-top: 0em;
+        padding-bottom: 0em;
+        width: 100% !important;
+        padding-left: 0;
+    }
+
+    .navigationLinks {
+        width: 20%;
+        padding-left: 1em;
+    }
+
+    .navigationLinks ul {
+        padding-left: 1em;
+        gap: 1em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        padding-left: 3em !important;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+        text-align: left !important;
+        padding-left: 1em !important;
+    }
+
+    .brandName {
+        justify-content: center;
+        padding: 0em !important;
+        padding-top: 5em !important;
+        align-items: center;
+        margin-bottom: 3em;
+    }
+
+    .brandName .profilePic {
+        display: none;
+    }
+
+    .brandName .img {
+        height: 5em;
+        width: 10em;
+    }
+
+    .intro p {
+        text-align: left;
+        padding-left: 1em !important;
+        padding-right: 3em !important;
+    }
+
+    .linkContainer {
+        padding-left: 0em;
+    }
+
+    .linkContainer button {
+        width: 20em !important;
+    }
+
+    .navigationLinks {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 2em;
+        min-height: 5%;
+        clip-path: none;
+        background: none;
+    }
+
+    .burger {
+        border: none;
+        background: none;
+    }
+
+    .intro p {
+        width: 100%;
+        padding: 0 5em 0 1em;
+    }
 }
