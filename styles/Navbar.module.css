@@ -6,20 +6,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: #000000;
+    background: var(--color-5);
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #434343, #000000);
+    background: -webkit-linear-gradient(to right, var(--color-1), var(--color-5));
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #434343, #000000);
+    background: linear-gradient(to right, var(--color-1), var(--color-5));
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 5em;
     padding-top: 0em;
     padding-left: 10em;
-    --color-1: #434343;
-    --color-2: #cdc392;
-    --color-3: rgba(255, 255, 255, 0.7);
-    --color-4: #343434;
-    --color-5: #000000;
+    z-index: 50;
+    isolation: isolate;
 }
 
 .ul {
@@ -33,7 +30,8 @@
 }
 
 .img {
-    zoom: 35%;
+    width: 10em;
+    height: 7em;
 }
 
 .brandName {
@@ -41,31 +39,19 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 3em;
     padding: 2em;
     isolation: isolate;
 }
 
-.listItem {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-basis: 100%;
-    gap: 1em;
-    padding-top: 2em;
-}
 
 .profilePic {
-    width: 10em;
-    height: 10em;
+    width: 5em;
+    height: 5em;
     border-radius: 50%;
-    border: 2px solid #CDC392;
+    border: 2px solid var(--color-2);
     background-image: url(../public/profilePic.png);
     background-size: contain;
-    display: block;
     position: relative;
-    zoom: 50%;
 }
 
 .profilePic::after {
@@ -73,7 +59,7 @@
     content: "";
     inset: -10%;
     border-radius: 50%;
-    background: linear-gradient(to right, #343434, #434343);
+    background: linear-gradient(to right, var(--color-4), var(--color-1));
     z-index: -1;
 }
 
@@ -92,14 +78,13 @@
 }
 
 .description span {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-3);
 }
 
 .secondList {
     display: flex;
     flex-direction: column;
     width: 100%;
-    position: relative;
     padding-left: 3em;
 }
 
@@ -149,7 +134,7 @@
     outline: none;
     box-shadow: 0px 0px 15px 3px var(--color-1);
     border-radius: 25px;
-    background-color: #CDC392;
+    background-color: var(--color-2);
     animation: jump 2s linear infinite;
 }
 
@@ -157,19 +142,19 @@
     font-family: "Raleway";
     letter-spacing: 0.05em;
     font-weight: 700;
-    color: #434343;
-    background-color: #CDC392;
+    color: var(--color-1);
+    background-color: var(--color-2);
 }
 
 .linkContainer button:hover {
     cursor: pointer;
-    background-color: #434343;
+    background-color: var(--color-1);
     box-shadow: 0px 0px 15px 5px var(--color-2);
 }
 
 .linkContainer button:hover a {
-    background-color: #434343;
-    color: #CDC392;
+    background-color: var(--color-1);
+    color: var(--color-2);
 }
 
 @keyframes jump {
@@ -205,7 +190,7 @@
     flex-direction: column;
     justify-content: center;
     clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%, 0% 100%);
-    background: #434343;
+    background: var(--color-1);
     z-index: 99;
     padding-left: 3em;
 }
@@ -216,14 +201,14 @@
     top: -1em;
     height: 100%;
     width: 100%;
-    color: #000;
+    color: var(--color-5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5em;
     transform: translateX(-100%);
     clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%, 0% 100%);
-    background-color: #CDC392;
+    background-color: var(--color-2);
     transition: all 1s ease-in;
 }
 
@@ -232,8 +217,8 @@
     height: 4em;
     border-radius: 50%;
     padding: 1em;
-    background: linear-gradient(to right, #434343, #000);
-    border: 3px solid #CDC392;
+    background: linear-gradient(to right, var(--color-1), var(--color-5));
+    border: 3px solid var(--color-2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -250,7 +235,7 @@
 .burger .burgerLayer {
     height: 0.2em;
     width: 100%;
-    background-color: #CDC392;
+    background-color: var(--color-2);
     border-radius: 3px;
     transition: all 1s ease-in-out;
 }
@@ -260,14 +245,21 @@
     font-family: "Jura";
 }
 
-.landingImage {
+.tilt {
     position: absolute;
-    top: -20%;
-    right: 0;
-    height: 140%;
+    top: 0%;
+    right: 0%;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+}
+
+.landingImage {
+    height: 100%;
     width: 100%;
     background-image: url(../public/landingPageImage.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
+    filter: grayscale(50%);
 }

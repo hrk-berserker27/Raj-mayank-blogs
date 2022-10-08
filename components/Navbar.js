@@ -2,6 +2,7 @@ import styles from "../styles/Navbar.module.css";
 import img from "../public/logo.png";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
+import Tilt from "react-parallax-tilt";
 
 function Navbar() {
   let active = false;
@@ -66,34 +67,37 @@ function Navbar() {
               priority="true"
             />
           </div>
-          <div className={styles.profilePic}></div>
+          <Tilt tiltMaxAngleX={30}>
+            <div className={styles.profilePic}></div>
+          </Tilt>
         </li>
         <li className={styles.secondList}>
-          <div className={styles.intro}>
-            <header>
-              <h1>
-                <Typewriter
-                  options={{
-                    strings: ["Hi, I'm Raj Mayank", "Welcome To My Blog"],
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </h1>
-            </header>
-            <p>
-              I am an aspiring economist with interest in various fields such as{" "}
-              <span>world-economics</span>, <span>macroeconomics</span> and{" "}
-              <span>microeconomics</span>. I have great expertise in{" "}
-              <span>International economics</span>.
-            </p>
-          </div>
+          <Tilt>
+            <div className={styles.intro}>
+              <header>
+                <h1>
+                  <Typewriter
+                    options={{
+                      strings: ["Hi, I'm Raj Mayank", "Welcome To My Blog"],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
+                </h1>
+              </header>
+              <p>
+                I am an aspiring economist with interest in various fields such
+                as <span>world-economics</span>, <span>macroeconomics</span> and{" "}
+                <span>microeconomics</span>. I have great expertise in{" "}
+                <span>International economics</span>.
+              </p>
+            </div>
+          </Tilt>
           <p className={styles.description}>
             Blogger&nbsp;<span>|</span>
             <span>|</span>
             &nbsp;Aspiring Economist
           </p>
-          <div className={styles.landingImage}></div>
         </li>
       </ul>
       <div className={styles.linkContainer}>
@@ -113,6 +117,9 @@ function Navbar() {
           <li>Contact Me</li>
         </ul>
       </div>
+      <Tilt className={styles.tilt} perspective="1200">
+        <div className={styles.landingImage}></div>
+      </Tilt>
     </nav>
   );
 }
