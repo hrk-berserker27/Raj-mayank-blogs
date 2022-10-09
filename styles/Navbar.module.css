@@ -386,7 +386,7 @@
         width: 100%;
         position: fixed;
         left: 0;
-        top: 2em;
+        top: 0;
         min-height: 5%;
         clip-path: none;
         background: none;
@@ -395,6 +395,7 @@
     .burger {
         border: none;
         background: none;
+        margin-top: 3%;
     }
 
     .intro p {

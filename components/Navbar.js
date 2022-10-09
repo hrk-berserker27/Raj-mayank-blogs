@@ -23,12 +23,13 @@ function Navbar() {
     element.style.transform = `rotate(${parentRotation})`;
   };
   //function for creating cross icon
-  const closeButtonActive = (id, position, top, left, zIndex) => {
+  const closeButtonActive = (id, position, top, left, zIndex, background) => {
     const burger = document.getElementById(id);
     burger.style.position = position;
     burger.style.left = left;
     burger.style.top = top;
     burger.style.zIndex = zIndex;
+    burger.style.backgroundColor = background;
     createArrowAndRevert(burger, "0.3em", "none", "90deg", "-0.3em", "45deg");
   };
   //function for reverting back to burger icon
@@ -41,9 +42,23 @@ function Navbar() {
   const handleClick = () => {
     if (typeof window !== "undefined") {
       const list = document.getElementById("navLinks");
+      const windowWidth = window.innerWidth;
+      let smallScreen = false;
+      if (windowWidth <= 600) {
+        smallScreen = true;
+      }
+      if (smallScreen) {
+        list.style.height = "100vh";
+        list.style.clipPath = "none";
+        list.style.alignItems = "center";
+      } else {
+        list.style.clipPath =
+          "polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%, 0% 100%)";
+        list.style.alignItems = "start";
+      }
       if (active) {
-        revert("burger", "static");
         list.style.transform = "translateX(-100%)";
+        revert("burger", "static");
         active = false;
         return;
       } else {
@@ -51,7 +66,7 @@ function Navbar() {
       }
       active = true;
       if (active) {
-        closeButtonActive("burger", "absolute", "30%", "1em", "99");
+        closeButtonActive("burger", "absolute", "30%", "1em", "99", "#434343");
       }
     }
   };
