@@ -6,17 +6,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: var(--color-5);
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, var(--color-1), var(--color-5));
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, var(--color-1), var(--color-5));
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 5em;
     padding-top: 0em;
     padding-left: 10em;
     z-index: 50;
     isolation: isolate;
+    position: relative;
+    background: linear-gradient(to right, var(--color-1), var(--color-5));
+}
+
+
+.navbar::after {
+    content: "";
+    background: url(../public/background.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    transform: rotate(180deg);
+    opacity: 0.4;
 }
 
 .ul {
@@ -314,6 +323,9 @@
 
 @media screen and (max-width: 850px) {
 
+    .navbar::after {
+        background-size: cover;
+    }
 
     .intro h1 {
         font-size: 2.5rem;
