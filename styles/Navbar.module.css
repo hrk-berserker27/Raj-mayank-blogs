@@ -205,6 +205,7 @@
     padding-left: 3em;
 }
 
+
 .navigationLinks ul {
     position: absolute;
     left: 0;
@@ -220,6 +221,37 @@
     clip-path: polygon(0% 0%, 50% 0%, 100% 50%, 50% 100%, 0% 100%);
     background-color: var(--color-2);
     transition: all 1s ease-in;
+}
+
+.icon {
+    margin-right: 0.3em;
+}
+
+
+.navigationLinks ul li {
+    display: flex;
+    align-items: center;
+}
+
+.navigationLinks ul li:nth-child(4n) {
+    margin-top: 1em;
+    margin-right: 2em;
+    word-spacing: 0.1em;
+    line-height: 1.24em;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.heart {
+    color: #c95c13;
+    vertical-align: middle;
+}
+
+.socialMedia {
+    vertical-align: middle;
+    margin-top: 1em;
+    display: flex;
+    gap: 1em;
 }
 
 .burger {
@@ -274,6 +306,12 @@
     filter: grayscale(50%);
 }
 
+@media screen and (max-width: 1250px) {
+    .navbar::after {
+        background-size: cover;
+    }
+}
+
 @media screen and (max-width: 1072px) {
 
     .intro {
@@ -323,10 +361,6 @@
 
 @media screen and (max-width: 850px) {
 
-    .navbar::after {
-        background-size: cover;
-    }
-
     .intro h1 {
         font-size: 2.5rem;
         padding-right: 20%;
@@ -349,6 +383,28 @@
     .navigationLinks ul {
         padding-left: 1em;
         gap: 1em;
+    }
+}
+
+@media screen and (max-width: 1160px) and (min-width: 600px) {
+    .containerList li span {
+        display: none;
+    }
+
+    .containerList li:nth-child(4n) {
+        border-top: 0px !important;
+        padding-top: 0px !important;
+        top: 20% !important;
+    }
+
+    .containerList li {
+        padding-left: 1em;
+    }
+
+    .socialMedia {
+        position: absolute;
+        top: 58%;
+        flex-direction: column;
     }
 }
 
@@ -402,6 +458,20 @@
         min-height: 5%;
         clip-path: none;
         background: none;
+    }
+
+    .containerList {
+        clip-path: none !important;
+        align-items: center !important;
+    }
+
+    .containerList li {
+        gap: 0.5em;
+    }
+
+    .containerList li:nth-child(4n) .socialMedia {
+        width: 100%;
+        justify-content: center;
     }
 
     .burger {

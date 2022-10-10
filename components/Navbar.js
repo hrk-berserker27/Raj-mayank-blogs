@@ -3,6 +3,15 @@ import img from "../public/logo.png";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
 import Tilt from "react-parallax-tilt";
+import {
+  FaBloggerB,
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaPhoneAlt,
+  FaHeart,
+  FaHome,
+} from "react-icons/fa";
 
 function Navbar() {
   let active = false;
@@ -66,7 +75,7 @@ function Navbar() {
       }
       active = true;
       if (active) {
-        closeButtonActive("burger", "absolute", "30%", "1em", "99", "#434343");
+        closeButtonActive("burger", "absolute", "20%", "1em", "99", "#434343");
       }
     }
   };
@@ -130,9 +139,31 @@ function Navbar() {
           <div className={styles.burgerLayer}></div>
         </div>
         <ul className={styles.containerList} id="navLinks">
-          <li>Home</li>
-          <li>Blogs</li>
-          <li>Contact Me</li>
+          <li>
+            <FaHome className={styles.icon} />
+            <span>Home</span>
+          </li>
+          <li>
+            <FaBloggerB className={styles.icon} />
+            <span>Blogs</span>
+          </li>
+          <li>
+            <FaPhoneAlt className={styles.icon} />
+            <span>Contact Me</span>
+          </li>
+          <li>
+            <span>
+              Show me some&nbsp;
+              <FaHeart className={styles.heart} />
+              &nbsp;by following on:
+            </span>
+
+            <div className={styles.socialMedia}>
+              <FaFacebook />
+              <FaInstagram />
+              <FaTwitter />
+            </div>
+          </li>
         </ul>
       </div>
       <Tilt className={styles.tilt} perspective="1200">
