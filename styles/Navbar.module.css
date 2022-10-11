@@ -310,6 +310,11 @@
     display: none;
 }
 
+.socialMedia>*:hover {
+    scale: 1.5;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1250px) {
     .navbar::after {
         background-size: cover;
@@ -418,9 +423,12 @@
 
     .socialMedia {
         position: absolute;
-        top: 58%;
+        top: 56%;
         flex-direction: column;
+        gap: 1em;
     }
+
+
 }
 
 @media screen and (max-width: 600px) {
