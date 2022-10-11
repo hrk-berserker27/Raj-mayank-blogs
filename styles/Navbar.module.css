@@ -306,6 +306,10 @@
     filter: grayscale(50%);
 }
 
+.follow {
+    display: none;
+}
+
 @media screen and (max-width: 1250px) {
     .navbar::after {
         background-size: cover;
@@ -387,6 +391,17 @@
 }
 
 @media screen and (max-width: 1160px) and (min-width: 600px) {
+
+    .follow {
+        display: block !important;
+        margin-bottom: 4em;
+        text-transform: uppercase;
+        font-family: "Raleway";
+        font-weight: 700;
+        text-align: center;
+        transform: translate(-1em);
+    }
+
     .containerList li span {
         display: none;
     }

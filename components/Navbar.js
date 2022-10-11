@@ -157,6 +157,7 @@ function Navbar() {
               <FaHeart className={styles.heart} />
               &nbsp;by following on:
             </span>
+            <span className={styles.follow}>Follow me on </span>
 
             <div className={styles.socialMedia}>
               <FaFacebook />
