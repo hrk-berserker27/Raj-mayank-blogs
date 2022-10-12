@@ -139,6 +139,7 @@ function Navbar() {
           <div className={styles.burgerLayer}></div>
         </div>
         <ul className={styles.containerList} id="navLinks">
+          <div className={styles.smallScreenImg}></div>
           <li>
             <FaHome className={styles.icon} />
             <span>Home</span>
@@ -151,7 +152,7 @@ function Navbar() {
             <FaPhoneAlt className={styles.icon} />
             <span>Contact Me</span>
           </li>
-          <li>
+          <li className={styles.lastListItem}>
             <span>
               Show me some&nbsp;
               <FaHeart className={styles.heart} />
