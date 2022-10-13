@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import BlogTable from "../components/BlogTable";
+import Footer from "../components/Footer";
 import Head from "next/head";
 import clientPromise from "../lib/mongodb";
 import { InferGetServerSidePropsType } from "next";
@@ -46,6 +47,7 @@ export default function Home({
         )} */}
         <Navbar />
         <BlogTable blogs = {blogs} />
+        <Footer/>
       </main>
     </div>
   );

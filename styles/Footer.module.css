@@ -1,5 +1,31 @@
 .footer {
     width: 100%;
     text-align: center;
+    backdrop-filter: blur(15px);
+    height: 10%;
     position: relative;
+    top: 90%;
+    z-index: -1;
+    font-family: "Jura";
+    font-weight: 700;
+    word-spacing: 0.5em;
+    background: linear-gradient(to right, var(--color-2), rgba(255, 255, 255));
+    background-clip: text;
+    color: transparent;
+}
+
+.heart {
+    color: rgb(220, 197, 43);
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+        background: var(--color-2);
+        color: var(--color-1);
+    }
+
+    .heart {
+        color: var(--color-1);
+    }
 }
