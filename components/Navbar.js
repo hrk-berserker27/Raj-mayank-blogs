@@ -129,7 +129,7 @@ function Navbar() {
       </ul>
       <div className={styles.linkContainer}>
         <button>
-          <a href="blog">Check out my blogs&nbsp;&rarr;</a>
+          <a href="#blogList">Check out my blogs&nbsp;&rarr;</a>
         </button>
       </div>
       <div className={styles.navigationLinks}>

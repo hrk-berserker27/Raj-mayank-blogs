@@ -1,12 +1,6 @@
 .container {
     min-height: 100vh;
     width: 100vw;
-    background: #000000;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, var(--color-1), var(--color-5));
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, var(--color-1), var(--color-5));
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: var(--color-3);
     padding-top: 3em;
 }
@@ -58,4 +52,79 @@
 
 .activeSlide {
     transform: translateX(-100%);
+}
+
+
+.blogList {
+    padding-left: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding-top: 2em;
+    z-index: 3;
+}
+
+
+.blogContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 2em;
+    padding-left: 6em;
+    padding-top: 2em;
+    padding-right: 2em;
+    padding-bottom: 10em;
+}
+
+.card {
+    height: max-content;
+    border: 2px solid rgba(255, 255, 255, 0.09);
+    border-radius: 1em;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(15px);
+}
+
+.card h1 {
+    font-family: "Jura";
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-2) !important;
+}
+
+.card p {
+    font-family: "Raleway";
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 35ch;
+}
+
+.heading {
+    font-family: "Raleway";
+    font-size: 2.5rem;
+    transform: translateX(-2em);
+    color: var(--color-2);
+}
+
+@media screen and (max-width: 1000px) {
+    .blogContainer {
+        padding-left: 3em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .blogList {
+        padding-left: 2em;
+    }
+
+    .blogContainer {
+        padding-left: 1em;
+    }
+
+    .textCenter {
+        transform: translateX(0em);
+    }
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/BlogTable.module.css";
 import { useInView } from "react-intersection-observer";
 
-function BlogTable() {
+function BlogTable(props) {
   const [counter, setCounter] = useState(0);
   const [ref, inview] = useInView({
     threshold: 0,
@@ -59,7 +59,17 @@ function BlogTable() {
         </div>
       </section>
       <section className={styles.blogList}>
-        <div className={styles.card}></div>
+        <header id="blogList" className={styles.heading}>
+          My Blogs
+        </header>
+        <section className={styles.blogContainer}>
+          {props.blogs.map((item) => (
+            <div className={styles.card} key={item.id}>
+              <h1>{item.title}</h1>
+              <p>{item.body}</p>
+            </div>
+          ))}
+        </section>
       </section>
     </div>
   );

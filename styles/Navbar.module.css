@@ -9,24 +9,9 @@
     padding: 5em;
     padding-top: 0em;
     padding-left: 10em;
-    z-index: 50;
     isolation: isolate;
-    position: relative;
-    background: linear-gradient(to right, var(--color-1), var(--color-5));
 }
 
-
-.navbar::after {
-    content: "";
-    background: url(../public/background.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-    inset: 0;
-    z-index: -3;
-    transform: rotate(180deg);
-    opacity: 0.4;
-}
 
 .ul {
     width: 100%;
@@ -339,11 +324,6 @@
     display: none;
 }
 
-@media screen and (max-width: 1250px) {
-    .navbar::after {
-        background-size: cover;
-    }
-}
 
 @media screen and (max-width: 1072px) {
 
