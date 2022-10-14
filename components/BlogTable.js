@@ -46,10 +46,18 @@ function BlogTable(props) {
     <div className={styles.container}>
       <section className={styles.slider} ref={ref}>
         <div className={styles.sliderContainer} id="slider">
-          <div className={styles.slides}>1</div>
-          <div className={styles.slides}>2</div>
-          <div className={styles.slides}>3</div>
-          <div className={styles.slides}>4</div>
+          <div className={styles.slides}>
+            <div className={styles.content1}></div>
+          </div>
+          <div className={styles.slides}>
+            <div className={styles.content2}></div>
+          </div>
+          <div className={styles.slides}>
+            <div className={styles.content3}></div>
+          </div>
+          <div className={styles.slides}>
+            <div className={styles.content4}></div>
+          </div>
         </div>
         <div className={styles.slidesCounter} id="list">
           <label className={styles.dash} htmlFor="1"></label>
