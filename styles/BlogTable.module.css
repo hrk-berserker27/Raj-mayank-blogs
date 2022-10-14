@@ -9,10 +9,11 @@
 /* slider,slides,blogList,card*/
 .slider {
     width: 100%;
-    height: 75%;
+    height: 85%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    gap: 4em;
 }
 
 .sliderContainer {
@@ -31,6 +32,7 @@
     font-size: 4rem;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .slidesCounter {
@@ -110,13 +112,14 @@
     color: var(--color-2);
 }
 
-.slides>* {
+.slides>div {
     width: 100%;
     height: 100%;
     background-size: contain;
     background-position: center;
-    background-repeat: no-repeat !important;
+    background-repeat: no-repeat;
 }
+
 
 .content1 {
     background: url(../public/taxi-data-science-graphs-on-pc-screen.gif);
