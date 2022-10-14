@@ -335,6 +335,10 @@
         flex-direction: column;
     }
 
+    .navbar {
+        position: relative;
+    }
+
     .brandName {
         padding-top: 5em;
     }
@@ -358,7 +362,12 @@
     }
 
     .landingImage {
-        background: none;
+        background: url(../public/mobile-background.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        opacity: 0.5;
+        transform: translateX(-50%);
     }
 
     .description {
@@ -556,5 +565,10 @@
 
     .containerList .socialMedia {
         justify-content: center;
+    }
+
+    .landingImage {
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }
