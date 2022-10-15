@@ -23,7 +23,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/BlogTable.js"
+    "components/BlogTable.js",
+    "pages/admin.tsx"
   ],
   "exclude": [
     "node_modules"
