@@ -29,11 +29,12 @@
 
 .form input {
     padding: 0.9em;
-    border-radius: 5px;
     width: 100%;
     border: none;
     outline: none;
     text-align: center;
+    background: transparent;
+    border-bottom: 2px solid var(--color-2);
 }
 
 .form input:focus {
@@ -45,6 +46,7 @@
     background-color: var(--color-2);
     color: var(--color-1);
     margin-top: 1.5em;
+    border-radius: 5px;
 }
 
 .form input[type="submit"]:hover {
