@@ -71,12 +71,13 @@ function BlogTable(props) {
           My Blogs
         </header>
         <section className={styles.blogContainer}>
-          {props.blogs.map((item) => (
-            <div className={styles.card} key={item.id}>
-              <h1>{item.title}</h1>
-              <p>{item.body}</p>
-            </div>
-          ))}
+          {props.blogs !== undefined &&
+            props.blogs.map((item) => (
+              <div className={styles.card} key={item.id}>
+                <h1>{item.title}</h1>
+                <p>{item.body}</p>
+              </div>
+            ))}
         </section>
       </section>
     </div>
